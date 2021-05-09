@@ -1,3 +1,14 @@
-import commander from "commander";
+import * as commander from 'commander';
+import {translate} from './main';
 
-new commander
+const program = new commander.Command();
+program.version('0.0.1')
+  .name('Translate')
+  .usage('<English>')
+  .arguments('<English>')
+  .action(function (english) {
+    console.log(english);
+    translate(english);
+  });
+
+program.parse(process.argv);
