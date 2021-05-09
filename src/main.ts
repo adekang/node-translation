@@ -12,7 +12,7 @@ const errorMap: ErrorMap = {
   54004: '账户余额不足',
 };
 
-export const translate = (word) => {
+export const translate = (word: string) => {
   const salt = Math.random();
   const sign = md5(appId + word + salt + appSecret);
   let from, to;
@@ -49,11 +49,9 @@ export const translate = (word) => {
   };
 
   const request = http.request(options, (response) => {
-    let chunks = [];
+    let chunks: Buffer[] = [];
 
-    // response.setEncoding('utf8');
-
-    response.on('data', (chunk) => {
+    response.on('data', (chunk: Buffer) => {
       chunks.push(chunk);
     });
 

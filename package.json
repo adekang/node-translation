@@ -1,8 +1,14 @@
 {
   "name": "node-translation",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/main.js",
   "license": "MIT",
+  "bin": {
+    "fy": "dist/cli.js"
+  },
+  "files": [
+    "dist/**/*.js"
+  ],
   "scripts": {
     "start": "ts-node-dev src/main.ts"
   },
